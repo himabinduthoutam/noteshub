@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+}
+
+.header {
+    /* background-color: #2c2c2c;
+    color: white;
+    padding: 15px; */
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.header-icons span {
+    cursor: pointer;
+}
+
+.note-container {
+    padding: 0;
+}
+
+.title-section {
+    background-color: #f5f5dc;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #d4a574;
+}
+
+.title-label {
+    color: #666;
+    font-size: 16px;
+}
+
+.note-date {
+    color: #666;
+    font-size: 16px;
+}
+
+.content-area {
+    background-color: #f5f5dc;
+    padding: 20px 15px;
+    min-height: calc(100vh - 140px);
+}
+
+.line {
+    border: none;
+    border-bottom: 1px solid #999;
+    margin: 30px 0;
+}
+
+.toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e8e8e8;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 25px;
+}
+
+.toolbar-btn {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 20px;
+} 
+
+/* Django Template Integration */
+input[type="text"] {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    color: #333;
+}
+
+/* textarea {
+    background: transparent;
+    border: none;
+    width: 100%;
+    min-height: 400px;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    color: #333;
+    line-height: 30px;
+} */
+
+textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    line-height: 32px;
+    font-size: 16px;
+    width: 100%;
+}
+
+
+
+.save-btn {
+    display: none;
+}
+
+.logout-bottom {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.logout-bottom button {
+    /* background: #dc3545; */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}.logout-bottom {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.logout-bottom button {
+    background: #dfdf7e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* nkjmnkj */
+ .toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e8e8e8;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 25px;
+}
+
+.toolbar-btn {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+} 
+
+.toolbar-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.toolbar-btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* klsdmxlksmxls */
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    background-color:#FFF2B2;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.add-btn {
+  background: brown;
+    color: white;
+    padding: 8px 14px; /* 4px top/bottom, 8px left/right */
+    font-size: 15px;  /* smaller text */
+    border-radius: 4px;
+    cursor: pointer;  /* optional: show pointer on hover */
+    line-height: 1;  
+    text-decoration: none;
+    height: 30px; 
+ }
+
+ .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+ }  
+
+ .search-input {
+    flex: 1; /* makes input take remaining space */
+    width: 300px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+}
+
+.search-btn:hover {
+    background-color: brown;
+}
+
+.search-form * {
+    display: inline-block;
+}
+
+
+.note-card {
+    background-color: #f8f5e1;   /* slightly lighter than page */
+    border-left: 5px solid #d2b48c;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.note-actions a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.note-actions .delete {
+    color: gray;
+}
+
+.logout-bottom {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.logout-bottom button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 14px;
+
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.primary-btn {
+    padding: 5px 14px;
+    font-size: 13px;
+
+    background-color: gray;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.primary-btn:hover {
+    background-color: gray;
+}
+
+
+
+.page-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+.ruled-area {
+    position: relative;
+    min-height: calc(100vh - 120px);
+    background: repeating-linear-gradient(
+        to bottom,
+        #fbf7d4,
+        #fbf7d4 32px,
+        #c0b283 33px
+    );
+}
+
+/* Textarea aligned with lines */
+.ruled-textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 32px;
+    padding: 5px 0;
+}
+
+
+
+body {
+    margin: 0;
+    background: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+/* Notepad background */
+.notepad {
+    /* min-height: 100vh;
+    background: #fbf7d4;
+    padding: 20px; */
+    .notepad {
+    min-height: 100vh;
+    background: repeating-linear-gradient(
+        to bottom,
+        #fbf7d4,
+        #fbf7d4 32px,
+        #c0b283 33px
+    );
+}
+
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* Ruled paper effect */
+
+
+html, body {
+    height: 100%;
+    background-color: #fbf7d4;
+}
+
+/* Fixed bottom action bar */
+.bottom-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: #fbf7d4; /* notepad color */
+    border-top: 1px solid #d2b48c;
+
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    z-index: 1000;
+}
+
+/* Save button */
+.save-btn {
+    display: inline-block !important;
+    padding: 6px 18px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Prevent content hiding behind buttons */
+.content-area,
+.ruled-area {
+    padding-bottom: 70px;
+}
+
+.btn.save {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn.back {
+    background: #6c757d;
+    color: white;
+}
+.btn {
+    padding: 6px 18px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* logout btn in notes_list */
+.logout-btn {
+    background: brown;
+    color: white;
+    padding: 8px 14px; 
+    font-size: 15px;  /* smaller text */
+    border-radius: 4px;
+    cursor: pointer;  /* optional: show pointer on hover */
+    line-height: 1;  
+    text-decoration: none;
+    height: 35px; 
+}
+
+/* Header alignment */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background-color: #fff4b8;
+    border-bottom: 2px solid #e2c76f;
+}
+
+.page-title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.username {
+    font-weight: 600;
+    color: #b22222;
+}
+
+/* Logout */
+.logout-form {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.logout-btn {
+    background-color: #b22222;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}

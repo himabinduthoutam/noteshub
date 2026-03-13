@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Note</title>
+    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+</head>
+
+<body>
+    <h1 class="page-title">Edit Note</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="title"
+                value="{{ note.title }}"
+                class="form-input"
+                placeholder="Title"
+                required
+            >
+
+            <textarea
+                name="content"
+                class="form-textarea"
+                placeholder="Content"
+                required
+            >{{ note.content }}</textarea>
+
+            <button type="submit" class="primary-btn">
+                Update
+            </button>
+        </form>
+
+        <a href="{% url 'note_list' %}" class="back-link"> Back</a>
+    </div>
+</body>
+</html>

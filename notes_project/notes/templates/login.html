@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fbf7d4;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* BIG background pencil & books */
+        body::before {
+            content: "✏️";
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            font-size: 220px;
+            opacity: 0.12;
+            transform: rotate(-25deg);
+        }
+
+        body::after {
+            content: "📚";
+            position: absolute;
+            bottom: 15%;
+            right: 8%;
+            font-size: 200px;
+            opacity: 0.12;
+            transform: rotate(15deg);
+        }
+
+        /* Extra floating book */
+        .bg-book {
+            position: absolute;
+            top: 65%;
+            left: 12%;
+            font-size: 160px;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+
+        .login-card {
+            width: 360px;
+            background: #fffbe6;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+
+        .login-icon {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #999;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            background: #8a8a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #6f6f6f;
+        }
+
+        .signup-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signup-text a {
+            color: #5a5aff;
+            text-decoration: none;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- extra background emoji -->
+<div class="bg-book">📖</div>
+
+<div class="login-card">
+    <div class="login-icon">📓</div>
+    <h2>Login</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <p class="signup-text">
+        Don’t have an account?
+        <a href="{% url 'signup' %}">Sign up</a>
+    </p>
+</div>
+
+</body>
+</html>

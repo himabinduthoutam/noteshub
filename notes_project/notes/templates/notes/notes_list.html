@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Notes</title>
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+
+
+</head>
+<body>
+   
+
+    <div class="container">
+
+        <div class="header">
+            <h1>My Notes</h1>
+
+            <div class="user-actions">
+                <span>Welcome, {{ request.user.username }}</span>
+
+              
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="{% url 'add_note' %}" class="add-btn">Add Note</a>
+
+            
+
+            <form method="get" class="search-form">
+                <button type="submit" class="search-btn">Search</button>
+                <input
+                    type="text"
+                    name="q"
+                    placeholder="Search notes..."
+                    value="{{ request.GET.q }}"
+                    class="search-input"
+                >
+                
+            </form>
+
+
+        </div>
+
+
+
+        {% for note in notes %}
+        <div class="note-card">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+
+            <div class="note-actions">
+                <a href="{% url 'edit_note' note.id %}"> Edit</a>
+                <a href="{% url 'delete_note' note.id %}" class="delete">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    <br><br>
+    
+  
+      <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        body {
+            background: #f4f6f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .signup-box {
+            width: 380px;
+            margin: 90px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: grey;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: grey;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box">
+    <h2>Create Account</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Username</label><br>
+        <input type="text" name="username" required><br>
+
+        <label>Password</label><br>
+        <input type="password" name="password1" required><br>
+
+        <label>Confirm Password</label><br>
+        <input type="password" name="password2" required><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+   Show errors clearly -->
+    <!-- {% if form.errors %}
+        <ul style="color:red;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="login-link">
+        <p>Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+    </div>
+</body>
+</html> --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fbf7d4;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* BIG background pencil & books */
+        body::before {
+            content: "✏️";
+            position: absolute;
+            top: 18%;
+            left: 6%;
+            font-size: 220px;
+            opacity: 0.12;
+            transform: rotate(-25deg);
+        }
+
+        body::after {
+            content: "📚";
+            position: absolute;
+            bottom: 14%;
+            right: 7%;
+            font-size: 200px;
+            opacity: 0.12;
+            transform: rotate(15deg);
+        }
+
+        .bg-book {
+            position: absolute;
+            top: 65%;
+            left: 10%;
+            font-size: 160px;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+
+        .signup-card {
+            width: 380px;
+            background: #fffbe6;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+
+        .signup-icon {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #999;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            background: #8a8a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .signup-btn:hover {
+            background: #6f6f6f;
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: #5a5aff;
+            text-decoration: none;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- extra background emoji -->
+<div class="bg-book">📖</div>
+
+<div class="signup-card">
+    <div class="signup-icon">📝</div>
+    <h2>Create Account</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.username.label_tag }}
+        {{ form.username }}
+
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    {% if form.errors %}
+        <ul style="color:red;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <p class="login-text">
+        Already have an account?
+        <a href="{% url 'login' %}">Login</a>
+    </p>
+</div>
+
+</body>
+</html>
